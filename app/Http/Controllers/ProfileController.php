@@ -32,6 +32,12 @@ class ProfileController extends Controller
     {
         $request->user()->fill($request->validated());
 
+        $path = null;
+        if ($request->hasFile('photo')) {
+            $path = $request->file('photo')->store('photos');
+            $request->user()->photo = $path;
+        }
+
         if ($request->user()->isDirty('email')) {
             $request->user()->email_verified_at = null;
         }
