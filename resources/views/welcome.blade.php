@@ -1,12 +1,11 @@
-@extends('layouts.app')
+<x-app>
+    <x-slot name="title">
+        Laravel Components
+    </x-slot>
 
-@section('title','Laravel Components')
+    <x-slot name="sidebar">
+        <p>サイドバーに追加できます。</p>
+    </x-slot>
 
-@section('sidebar')
-@parent
-<p>サイドバーに追加できます。</p>
-@endsection
-
-@section('content')
-<h1 class="text-2xl">Laravel Components</h1>
-@endsection
+    <h1 class="text-2xl">Laravel Components</h1>
+</x-app>
